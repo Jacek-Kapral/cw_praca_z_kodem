@@ -4,11 +4,11 @@ jobs:
     Test-github-actions:
     runs on: ubuntu-latest
     steps:
+        - name: Check out repository code
+          uses: actions/checkout@v3
         - run: echo "Moj pierwszy CI/CD Workflow"
         - run: docker --version
         - run: python --version
-        - name: Check out repository code
-          uses: actions/checkout@v3
 jobs:
     Test-github-actions:
     runs on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
         - run: Pylint app.py
         - name: Check out repository code
           uses: actions/checkout@v3
-        
+
 jobs:
     Test-github-actions:
     runs on: ubuntu-latest
