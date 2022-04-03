@@ -2,23 +2,23 @@ name: Jacek Cierkosz 76259 Github Workflow
 on: [push]
 jobs:
     Test-github-actions:
-        runs on: ubuntu-latest
-        steps:
-            - run: docker --version
-            - run: python --version
-            - name: Check out repository code
-              uses: actions/checkout@v3
+    runs on: mint-latest
+    steps:
+        - run: docker --version
+        - run: python --version
+        - name: Check out repository code
+          uses: actions/checkout@v3
     Test-github-actions1:
-        runs on: ubuntu-latest
-        steps:
-            - name: Check out repository code
-              uses: actions/checkout@v3
-            - run: pylint app.py
+    runs on: mint-latest
+    steps:
+        - name: Check out repository code
+          uses: actions/checkout@v3
+        - run: pylint app.py
     Test-github-actions2:
-        runs on: ubuntu-latest
-        steps:
-            - name: Check out repository code
-              uses: actions/checkout@v3
-            - run: docker build --tag test-flask-app .
+    runs on: mint-latest
+    steps:
+        - name: Check out repository code
+          uses: actions/checkout@v3
+        - run: docker build --tag test-flask-app .
 
         
