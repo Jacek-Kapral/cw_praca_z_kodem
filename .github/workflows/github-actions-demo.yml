@@ -8,13 +8,13 @@ jobs:
         - run: python --version
         - name: Check out repository code
           uses: actions/checkout@v3
-    Test-github-actions1:
+    Test-github-actions:
     runs on: mint-latest
     steps:
         - name: Check out repository code
           uses: actions/checkout@v3
         - run: pylint app.py
-    Test-github-actions2:
+    Test-github-actions:
     runs on: mint-latest
     steps:
         - name: Check out repository code
