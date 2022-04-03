@@ -1,0 +1,25 @@
+name: Jacek Cierkosz 76259 Github Workflow
+on: [push]
+jobs:
+    Test-github-actions:
+    runs on: ubuntu-latest
+    steps:
+        -run: echo "Moj pierwszy CI/CD Workflow"
+        -run: docker --version
+        -run: python --version
+        -name: Check out repository code
+         uses: actions/checkout@v3
+jobs:
+    Test-github-actions:
+    runs on: ubuntu-latest
+    steps:
+        -run: Pylint app.py
+        -name: Check out repository code
+         uses: actions/checkout@v3
+jobs:
+    Test-github-actions:
+    runs on: ubuntu-latest
+    steps:         
+        -run: docker build --tag test-flask-app
+        -name: Check out repository code
+         uses: actions/checkout@v3
