@@ -4,24 +4,20 @@ jobs:
     Test-github-actions:
     runs on: ubuntu-latest
     steps:
-        - name: Check out repository code
-          uses: actions/checkout@v3
-        - run: echo "Moj pierwszy CI/CD Workflow"
         - run: docker --version
         - run: python --version
-jobs:
-    Test-github-actions:
+    Test-github-actions1:
     runs on: ubuntu-latest
     steps:
+        - name: Check out repository code
+          uses: actions/checkout@v3
         - run: Pylint app.py
-        - name: Check out repository code
-          uses: actions/checkout@v3
 
-jobs:
-    Test-github-actions:
+    Test-github-actions2:
     runs on: ubuntu-latest
-    steps: 
-        - run: docker build --tag test-flask-app        
+    steps:
         - name: Check out repository code
           uses: actions/checkout@v3
+        - run: docker build --tag test-flask-app .
+
         
