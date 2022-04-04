@@ -13,9 +13,10 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - uses: actions/setup-python@v2
-   - run: sudo apt install pylint
-   - run: find . -name '*.py' -exec pylint {} \;
-   - name: Pylint app check
+   - run: | 
+       sudo apt install pylint
+       find . -name '*.py' -exec pylint {} \;
+   - name: Pylint app.py check
      uses: actions/checkout@v3
 
  Test-github-actions-test3:
