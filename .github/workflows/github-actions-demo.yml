@@ -1,22 +1,21 @@
-name: My first workflow test
+name: Jacek_Cierkosz_album_76259
 on: [push]
 jobs:
- Test-github-actions-version_check:
+ Test-github-actions-python_docker:
   runs-on: ubuntu-latest
   steps:
-   - run: python --version
-   - run: docker --version
-   - name: Check python and docker version
+   - run: |
+       python --version
+       docker --version
+   - name: Python and docker version check
      uses: actions/checkout@v3
- Test-github-actions-pylint_check:
+ Test-github-actions-pylint:
   runs-on: ubuntu-latest
   steps:
    - uses: actions/setup-python@v2
-   - run: dir
-   - run: ls
    - run: sudo apt install pylint
    - run: find . -name '*.py' -exec pylint {} \;
-   - name: Check python consistency in app.py
+   - name: Pylint app check
      uses: actions/checkout@v3
 
  Test-github-actions-test3:
