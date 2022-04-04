@@ -22,11 +22,8 @@ jobs:
  Test-github-actions-dockerbuild:
   runs-on: ubuntu-latest
   steps:
-   - name: Login to dockerhub
-     uses: dockerhub/login-action@v1
-     with:
-       username: ${{ secrets.DOCKERHUB_USERNAME }}
-       password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-   
-       
+   - name: Docker image build
+     uses: actions/chekout@v3
+   - run: |
+       sudo apt install docker
+       docker build --tag test-flask-app .       
