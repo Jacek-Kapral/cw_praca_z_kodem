@@ -1,20 +1,20 @@
 name: Jacek Cierkosz 76259 Github Workflow
 on: [push]
 jobs:
-    Test-github-actions:
+  Test-github-actions:
     runs on: ubuntu-latest
     steps:
         - run: docker --version
         - run: python --version
         - name: Check out repository code
           uses: actions/checkout@v3
-    Test-github-actions1:
+  Test-github-actions1:
     runs on: ubuntu-latest
     steps:
         - name: Check out app
           uses: actions/checkout@v3
         - run: pylint app.py
-    Test-github-actions2:
+  Test-github-actions2:
     runs on: ubuntu-latest
     steps:
         - name: Check out docker
