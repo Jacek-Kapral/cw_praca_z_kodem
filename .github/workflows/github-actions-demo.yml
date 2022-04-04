@@ -1,22 +1,27 @@
-name: Jacek Cierkosz 76259 Github Workflow
+name: My first workflow test
 on: [push]
 jobs:
-    Test-github-actions:
-    runs on: ubuntu-latest
-    steps:
-        - run: docker --version
-        - run: python --version
-        - name: Check out repository code
-          uses: actions/checkout@v3
-    Test-github-actions1:
-    runs on: ubuntu-latest
-    steps:
-        - name: Check out app
-          uses: actions/checkout@v3
-        - run: pylint app.py
-    Test-github-actions2:
-    runs on: ubuntu-latest
-    steps:
-        - name: Check out docker
-          uses: actions/checkout@v3
-        - run: docker build --tag test-flask-app .    
+ Test-github-actions-version_check:
+  runs-on: ubuntu-latest
+  steps:
+   - run: python --version
+   - run: docker --version
+   - name: Check python and docker version
+     uses: actions/checkout@v3
+ Test-github-actions-pylint_check:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/setup-python@v2
+   - run: dir
+   - run: ls
+   - run: sudo apt install pylint
+   - run: find . -name '*.py' -exec pylint {} \;
+   - name: Check python consistency in app.py
+     uses: actions/checkout@v3
+
+ Test-github-actions-test3:
+  runs-on: ubuntu-latest
+  steps:
+   - run: echo "Test testu"
+   - name: Check python consistency in app.py
+     uses: actions/checkout@v3
