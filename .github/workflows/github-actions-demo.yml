@@ -23,7 +23,7 @@ jobs:
   runs-on: ubuntu-latest
   steps:
    - name: Docker image build
-     uses: actions/setup-docker@v1
+     uses: docker/setup-buildx-action@v1
    - run: |
        sudo apt install docker
        docker build --tag test-flask-app .
