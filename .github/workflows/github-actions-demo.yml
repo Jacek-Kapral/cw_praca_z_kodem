@@ -3,23 +3,23 @@ on: push
 jobs:
   Test-github-actions:
   runs on: ubuntu-latest
-    steps:
-      - run: docker --version
-      - run: python --version
-      - name: Check out docker and python versions
-        uses: actions/checkout@v3
+      steps:
+          - run: docker --version
+          - run: python --version
+          - name: Check out docker and python versions
+            uses: actions/checkout@v3
   Test-github-actions1:
   runs on: ubuntu-latest
-    steps:
-      - name: Check out app
-        uses: actions/checkout@v3
-      - run: apt get install pylint
-      - run: pylint app.py
+      steps:
+          - name: Check out app
+            uses: actions/checkout@v3
+          - run: apt get install pylint
+          - run: pylint app.py
   Test-github-actions2:
   runs on: ubuntu-latest
-    steps:
-      - name: Check out docker
-        uses: actions/checkout@v3
-      - run: docker build --tag test-flask-app .
+      steps:
+          - name: Check out docker
+            uses: actions/checkout@v3
+          - run: docker build --tag test-flask-app .
 
         
